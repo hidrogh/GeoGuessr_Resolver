@@ -158,6 +158,7 @@ function getCoordInfo() {
         return;
     }
     response = fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}')
+    return response.address
 }
 // ====================================Controls,setup, etc.====================================
 
@@ -176,5 +177,7 @@ let onKeyDown = (e) => {
         mapsFromCoords(false)
     }
 }
+
+window.alert(getCoordInfo());
 
 document.addEventListener("keydown", onKeyDown);
