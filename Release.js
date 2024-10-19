@@ -176,8 +176,12 @@ let onKeyDown = (e) => {
         e.stopImmediatePropagation();
         mapsFromCoords(false)
     }
+    if (e.keyCode === 52) {
+        e.stopImmediatePropagation();
+        window.alert(getCoordInfo());
+    }
 }
 
-window.alert(getCoordInfo());
+
 
 document.addEventListener("keydown", onKeyDown);
