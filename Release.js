@@ -151,6 +151,14 @@ function mapsFromCoords() { // opens new Google Maps location using coords.
     }
 }
 
+// get coord info
+function getCoordInfo() {
+    const {lat,lng} = globalCoordinates
+    if (!lat || !lng) {
+        return;
+    }
+    response = fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}')
+}
 // ====================================Controls,setup, etc.====================================
 
 
